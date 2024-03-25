@@ -4,7 +4,7 @@ import { faEdit, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import noteContext from "../context/notes/noteContext";
 
 const NoteItem = (props) => {
-	let { title, description, id, note, updateNote } = props;
+	let { note, updateNote } = props;
 	const context = useContext(noteContext);
 	const { deleteNote } = context;
 
@@ -17,12 +17,12 @@ const NoteItem = (props) => {
 				>
 					<div className="card-body">
 						<h5 className="card-title d-flex">
-							<b className="me-auto">{title}</b>
+							<b className="me-auto">{note.title}</b>
 							<FontAwesomeIcon
 								className="mx-1"
 								icon={faTrashAlt}
 								onClick={() => {
-									deleteNote(id);
+									deleteNote(note._id);
 								}}
 							/>
 							<FontAwesomeIcon
@@ -31,7 +31,7 @@ const NoteItem = (props) => {
 								icon={faEdit}
 							/>
 						</h5>
-						<p className="card-text">{description}</p>
+						<p className="card-text">{note.description}</p>
 					</div>
 				</div>
 			</div>
@@ -41,4 +41,3 @@ const NoteItem = (props) => {
 
 export default NoteItem;
 
-//

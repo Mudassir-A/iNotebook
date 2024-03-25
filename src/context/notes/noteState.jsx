@@ -17,10 +17,10 @@ const NoteState = (props) => {
 					"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5NjgxNWZlMzE2ODc2NmUzNThjZWZlIn0sImlhdCI6MTY4NzU4NTExOX0.lntAOOH8NT1pNW2tEpF9xx7TA1swcB90QDjfelaH1Tw",
 			},
 		});
+		
 		// API CALL
-
 		const json = await response.json();
-		console.log(json);
+		// console.log(json);
 		setNotes(json);
 	};
 	// * Fetch notes end
@@ -53,7 +53,7 @@ const NoteState = (props) => {
 				'Content-Type': 'application/json',
 				'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5NjgxNWZlMzE2ODc2NmUzNThjZWZlIn0sImlhdCI6MTY4NzU4NTExOX0.lntAOOH8NT1pNW2tEpF9xx7TA1swcB90QDjfelaH1Tw'
 			},
-			body: JSON.stringify({ id, title, description, tag })
+			body: JSON.stringify({title, description, tag })
 		});
 		const json = await response.json();
 		console.log(json);

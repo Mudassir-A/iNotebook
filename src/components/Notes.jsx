@@ -76,7 +76,7 @@ const Notes = () => {
 					{notes.map((note) => {
 						return (
 							<div className="col-md-4" key={note._id}>
-								<NoteItem updateNote={updateNote} note={note} title={note.title} description={note.description} id={note._id} />
+								<NoteItem updateNote={updateNote} note={note} />
 							</div>
 						);
 					})}
@@ -87,3 +87,5 @@ const Notes = () => {
 };
 
 export default Notes;
+
+// 
